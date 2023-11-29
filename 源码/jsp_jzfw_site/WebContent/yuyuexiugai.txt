@@ -1,0 +1,9 @@
+CREATE TABLE [dbo].[yuyuexiugai] (
+	[ID] [int] IDENTITY (1, 1) NOT NULL ,[gonghao] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,[xingming] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,[xingbie] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,[fuwumingcheng] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,[fuwuleibie] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,[jiage] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,[yuyueshijian] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,[xiugaileibie] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,[yuyueren] [varchar] (50) COLLATE Chinese_PRC_CI_AS NULL ,[issh] [varchar] (2) COLLATE Chinese_PRC_CI_AS NULL DEFAULT ('否')  ,[addtime] [datetime] DEFAULT (getdate()) 
+) ON [PRIMARY] 
+GO
+
+insert into yuyuexiugai(gonghao,xingming,xingbie,fuwumingcheng,fuwuleibie,jiage,yuyueshijian,xiugaileibie,yuyueren) select top 1 gonghao,xingming,xingbie,fuwumingcheng,fuwuleibie,jiage,yuyueshijian,'延期','014' from yuyue order by newid();insert into yuyuexiugai(gonghao,xingming,xingbie,fuwumingcheng,fuwuleibie,jiage,yuyueshijian,xiugaileibie,yuyueren) select top 1 gonghao,xingming,xingbie,fuwumingcheng,fuwuleibie,jiage,yuyueshijian,'暂停','006' from yuyue order by newid();insert into yuyuexiugai(gonghao,xingming,xingbie,fuwumingcheng,fuwuleibie,jiage,yuyueshijian,xiugaileibie,yuyueren) select top 1 gonghao,xingming,xingbie,fuwumingcheng,fuwuleibie,jiage,yuyueshijian,'续订','011' from yuyue order by newid();insert into yuyuexiugai(gonghao,xingming,xingbie,fuwumingcheng,fuwuleibie,jiage,yuyueshijian,xiugaileibie,yuyueren) select top 1 gonghao,xingming,xingbie,fuwumingcheng,fuwuleibie,jiage,yuyueshijian,'一键换工人','028' from yuyue order by newid();insert into yuyuexiugai(gonghao,xingming,xingbie,fuwumingcheng,fuwuleibie,jiage,yuyueshijian,xiugaileibie,yuyueren) select top 1 gonghao,xingming,xingbie,fuwumingcheng,fuwuleibie,jiage,yuyueshijian,'一键换工人','001' from yuyue order by newid();
+
+update yuyuexiugai set issh='是';
+
